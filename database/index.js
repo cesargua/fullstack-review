@@ -22,7 +22,7 @@ let save = (data) => {
   // This function should save a repo or repos to
   // the MongoDB
   const repo = new Repo(data);
-  console.log(repo)
+  console.log("inside db", repo)
 
   //add a conditional where only insert to db if its not already in there
   repo.save((err)=>{
@@ -31,6 +31,9 @@ let save = (data) => {
       console.log('Inserted repo to db successfully!')
     }
   })
+  // Repo.insertMany(data).then(()=>{
+  //   console.log('data inserted')
+  // })
 }
 
 let retrieve = (cb)=> {
